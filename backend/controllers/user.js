@@ -41,6 +41,7 @@ exports.login = (req, res, next) => {
                     }
                     res.status(200).json({
                         userId: user._id,
+                        //Création d'un token de connexion
                         token: jwt.sign({ userId: user._id },
                             process.env.TOKEN_USER, { expiresIn: '24h' }
                         )

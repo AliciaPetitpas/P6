@@ -1,4 +1,4 @@
-//Regex pour vérifier l'adresse email
+//Regex pour sécuriser l'adresse email
 module.exports = (req, res, next) => {
     const validEmail = (email) => {
         let emailRegexp = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/

@@ -1,4 +1,4 @@
-//on récupère le models du password
+//on récupère le modèle du password
 const passwordSchema = require('../models/password');
 
 //on vérifie que le mot de passe respecte le schéma

@@ -1,7 +1,7 @@
 //imp.mongoose
 const mongoose = require('mongoose');
 
-//schéma sauce
+//schéma de la base de donnée 
 const sauceSchema = mongoose.Schema({
     userId: { type: String, required: true },
     name: { type: String, required: true },
