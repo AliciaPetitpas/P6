@@ -22,8 +22,6 @@ exports.modifySauce = (req, res, next) => {
             (sauce) => {
                 //Si l'userID du token et de la sauce sont différents : erreur authentification
                 if (sauce.userId !== req.auth.userId) {
-                    // console.log(sauce.userId);
-                    // console.log(req.auth.userId);
                     res.status(400).json({ error });
                 }
                 const filename = sauce.imageUrl.split('/images/')[1];
