@@ -20,19 +20,13 @@ exports.createSauce = (req, res, next) => {
 exports.modifySauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id }).then(
             (sauce) => {
-                //Si on ne trouve pas la sauce recherchée
-                if (!sauce) {
-                    res.status(404).json({
-                        error: new Error('No such object')
-                    });
+                //Si l'userID du token et de la sauce sont différents : erreur authentification
+                if (sauce.userId !== req.auth.userId) {
+                    // console.log(sauce.userId);
+                    // console.log(req.auth.userId);
+                    res.status(400).json({ error });
                 }
-                //Si l'ID de l'user ne correspond pas à celui qui possède l'objet
-                if (thing.userId !== req.auth.userId) {
-                    res.status(400).json({
-                        error: new Error('Unauthorized request')
-                    });
-                }
-                const filename = Sauce.imageUrl.split('/images/')[1];
+                const filename = sauce.imageUrl.split('/images/')[1];
                 fs.unlink(`images/${filename}`, () => {
                     const sauceObject = req.file ? {
                         ...JSON.parse(req.body.sauce),
@@ -50,17 +44,9 @@ exports.modifySauce = (req, res, next) => {
 exports.deleteSauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id }).then(
             (sauce) => {
-                //Si on ne trouve pas la sauce recherchée
-                if (!sauce) {
-                    res.status(404).json({
-                        error: new Error('No such object')
-                    });
-                }
-                //Si l'ID de l'user ne correspond pas à celui qui possède l'objet
-                if (thing.userId !== req.auth.userId) {
-                    res.status(400).json({
-                        error: new Error('Unauthorized request')
-                    });
+                //Si l'userID du token et de la sauce sont différents : erreur authentification
+                if (sauce.userId !== req.auth.userId) {
+                    res.status(400).json({ error });
                 }
                 const filename = sauce.imageUrl.split('/images/')[1];
                 fs.unlink(`images/${filename}`, () => {

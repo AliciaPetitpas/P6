@@ -13,7 +13,7 @@ exports.signup = (req, res, next) => {
         .then(salt => {
             bcrypt.hash(req.body.password, salt)
                 .then(hash => {
-                    console.log(hash);
+                    // console.log(hash);
                     const user = new User({
                         email: req.body.email,
                         password: hash

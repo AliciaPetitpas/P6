@@ -19,8 +19,11 @@ mongoose
     .then(() => console.log("Connected to MongoDB"))
     .catch(() => console.log("Failed to connect to MongoDB"));
 
+//Paramètres Helmet
+// Sets "Cross-Origin-Resource-Policy: cross-origin"
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+
 //CORS headers
-app.use(helmet());
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
