@@ -2,7 +2,9 @@
 
 Ce repository est une deuxième sauvegarde, c'est pourquoi il n'y a pas beaucoup de commit.
 
-<!-- DEMARRER LE PROJET -->
+---------------------------------------------------------------------------------------------
+
+DEMARRER LE PROJET
 
 Ouvrir un terminal pour le backend et executer la commande suivante : `nodemon server`
 
