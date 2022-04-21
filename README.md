@@ -1,5 +1,7 @@
 # P6
 
+Projet 6 : Construire une API sécurisée pour une application d'avis gastronomiques
+
 Ce repository est une deuxième sauvegarde, c'est pourquoi il n'y a pas beaucoup de commit.
 
 ---------------------------------------------------------------------------------------------
