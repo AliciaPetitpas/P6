@@ -15,7 +15,7 @@ Ce repository est une deuxième sauvegarde, c'est pourquoi il n'y a pas beaucoup
 ___
 
 
-# Project 6: Build a secure APÏ
+# Project 6: Build a secure API
 
 ## Backend
 
